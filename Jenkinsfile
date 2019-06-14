@@ -1,7 +1,7 @@
 node{
 	def app
   	stage('clone repo'){
-    	checkout scm
+    	git credentialsId: 'git', url: 'https://github.com/shashikant-koder/nginx.git'
   	}
  
  	stage('build'){
