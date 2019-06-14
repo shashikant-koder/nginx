@@ -1,7 +1,7 @@
 node{
 	def app
   	stage('clone repo'){
-    	git credentialsId: 'git', url: 'https://github.com/shashikant-koder/nginx.git'
+    	git credentialsId: 'git', url: 'https://github.com/shashikant-koder/nginx'
   	}
  
  	stage('build'){
