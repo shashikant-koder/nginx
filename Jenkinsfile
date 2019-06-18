@@ -1,14 +1,12 @@
-node{
-	agent {
-    label 'master'
-  }
-	def app
+pipeline{
+   agent any
+   stages{
   	stage('clone repo'){
     	git credentialsId: 'git', url: 'https://github.com/shashikant-koder/nginx'
   	}
  
  	stage('build'){
-   	sh 'docker ps' 
+   	sh 'docker build -t myimage .' 
   	}
 	stage('test'){
 		app.inside{
@@ -22,4 +20,5 @@ node{
 			app.push("latest")
 		}
   	}
+   }
 }
