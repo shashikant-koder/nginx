@@ -5,7 +5,7 @@ node{
   	}
  
  	stage('build'){
-   	app = docker.build("shashikant-koder/nginx")
+   	app = docker.build("my-image:${env.BUILD_ID}")
   	}
 	stage('test'){
 		app.inside{
