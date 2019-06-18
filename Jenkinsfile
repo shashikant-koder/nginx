@@ -3,7 +3,7 @@ pipeline{
 	stages{
 	  	stage("clone repo"){
 			steps{
-				git url: 'https://github.com/shashikant-koder/nginx'
+				git credentialsId: 'git', url: 'https://github.com/shashikant-koder/nginx'
 			}
   		}
 	}	
