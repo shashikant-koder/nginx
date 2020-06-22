@@ -1,11 +1,12 @@
 services:
   - docker
 
-before_deploy:
+script:
+  - docker build -t nginx .
+  - docker images
   - echo $DOCKER_USER
   - echo $DOCKER_PASS
   - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-  - docker build -t nginx .
   - docker images
   - docker tag nginx $DOCKER_USERNAME/nginx
   - docker push $DOCKER_USERNAME/nginx
