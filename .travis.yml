@@ -8,5 +8,5 @@ script:
   - echo $DOCKER_PASS
   - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
   - docker images
-  - docker tag nginx $DOCKER_USERNAME/nginx
-  - docker push $DOCKER_USERNAME/nginx
+  - docker tag nginx $DOCKER_USER/nginx
+  - docker push $DOCKER_USER/nginx
