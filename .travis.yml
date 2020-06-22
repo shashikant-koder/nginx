@@ -6,7 +6,7 @@ script:
   - docker images
   - echo $DOCKER_USER
   - echo $DOCKER_PASS
-  - docker login -u=$DOCKER_USER -p=$DOCKER_PASS
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - docker images
   - docker tag nginx $DOCKER_USER/nginx
   - docker push $DOCKER_USER/nginx
