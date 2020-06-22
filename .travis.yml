@@ -1,0 +1,6 @@
+services:
+  - docker
+
+before_deploy:
+  - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+  - docker images
