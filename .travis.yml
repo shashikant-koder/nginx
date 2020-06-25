@@ -2,6 +2,7 @@ services:
   - docker
 
 script:
+  - bash delete.sh $DOCKER_USER $DOCKER_PASS
   - docker build -t nginx .
   - docker images
   - echo $DOCKER_USER
