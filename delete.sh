@@ -5,8 +5,7 @@ PASSWORD=$2
 
 ORGANIZATION="shkant27"
 IMAGE="nginx"
-echo $1
-echo $2
+
 login_data() {
 cat <<EOF
 {
@@ -27,9 +26,9 @@ do
     if [ $count -gt 2 ]
     then
         echo "delete : ${i}"
-        #curl "https://hub.docker.com/v2/repositories/${ORGANIZATION}/${IMAGE}/tags/${i}/" \
-        #-X DELETE \
-        #-H "Authorization: JWT ${TOKEN}"
+        curl "https://hub.docker.com/v2/repositories/${ORGANIZATION}/${IMAGE}/tags/${i}/" \
+        -X DELETE \
+        -H "Authorization: JWT ${TOKEN}"
     else
         echo "dont delete : ${i}"
     fi
