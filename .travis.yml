@@ -4,4 +4,6 @@ services:
 script:
  #- bash delete.sh $DOCKER_USER $DOCKER_PASS
   - docker build -t nginx .
-  - bash installGoogleContDiff.sh $DOCKER_USER  $DOCKER_PASS
+  - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+  - docker pull $DOCKER_USER/nginx:abcd
+  - bash installGoogleContDiff.sh nginx $DOCKER_USER/nginx:abcd
