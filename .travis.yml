@@ -3,6 +3,5 @@ services:
 
 script:
  #- bash delete.sh $DOCKER_USER $DOCKER_PASS
-  - docker build -t nginx .
-  - docker tag nginx $DOCKER_USERNAME/nginx:latest
+  - docker build -t $DOCKER_USERNAME/nginx:latest .
   - bash installGoogleContDiff.sh $DOCKER_USER $DOCKER_PASS
